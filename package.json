@@ -1,0 +1,49 @@
+{
+  "name": "slicenbeat-forecast-weather",
+  "version": "1.0.0",
+  "description": "A simple CLI-command for weather forecast",
+  "bin": {
+    "weather": "./dist/weather.js"
+  },
+  "scripts": {
+    "build": "npm run clear-dist && tsc && npm link",
+    "start": "node ./dist/weather.js",
+    "build-and-start": "npm run build && npm run start",
+    "clear-dist": "rm -r ./dist || true",
+    "debug": "tsc --sourcemap",
+    "postinstall": "chmod +x ./dist/weather.js"
+  },
+  "keywords": [
+    "cli",
+    "weather-api"
+  ],
+  "files": [
+    "dist",
+    ".env",
+    "config.json",
+    "README"
+  ],
+  "author": "Damir Ivaev",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "eslint": "^8.53.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1"
+  },
+  "volta": {
+    "node": "18.18.2"
+  },
+  "engines": {
+    "node": ">=18.18.2"
+  }
+}
